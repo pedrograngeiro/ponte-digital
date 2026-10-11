@@ -1,0 +1,489 @@
+/* Cores e estilos gerais */
+:root {
+    --ink: #163735;
+    --green: #244e43;
+    --lime: #d9ef81;
+    --paper: #f6f5ec;
+    --line: #d6dcd0;
+    --muted: #506460;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+}
+a {
+    color: inherit;
+    text-underline-offset: 5px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+h1,
+h2,
+h3,
+p,
+figure {
+    margin: 0;
+}
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+h1 {
+    font-size: clamp(2.6rem, 5.3vw, 5.5rem);
+    font-weight: 600;
+}
+h2 {
+    font-size: clamp(2rem, 3.3vw, 3.5rem);
+    font-weight: 500;
+}
+h3 {
+    font-size: 1.65rem;
+}
+em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+p + p {
+    margin-top: 1rem;
+}
+
+/* Cabeçalho e navegação */
+.cabecalho,main,
+
+/* Rodapé */
+.rodape {
+    max-width: 1320px;
+    margin: auto;
+}
+.cabecalho {
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+}
+.marca {
+    font-size: 1.5rem;
+    letter-spacing: -0.05em;
+    font-weight: 800;
+    text-decoration: none;
+}
+.marca > span:not(.simbolo) {
+    font-weight: 400;
+}
+.simbolo {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--lime);
+    padding: 0 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.cabecalho nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.cabecalho nav a {
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.cabecalho nav a[aria-current] {
+    text-decoration: underline;
+}
+.nav-cta {
+    padding: 10px 20px;
+    border: 1px solid var(--ink);
+    border-radius: 50px;
+}
+
+/* Página inicial */
+.hero {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 36px;
+    align-items: center;
+    padding: 70px 48px 64px;
+}
+.eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.lead {
+    font-size: 1.12rem;
+    max-width: 550px;
+    color: var(--muted);
+    margin-top: 25px;
+}
+.acoes {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    background: var(--ink);
+    color: white;
+    border: 0;
+    border-radius: 50px;
+    padding: 15px 24px;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+.botao:hover {
+    background: #315c50;
+}
+.link {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.micro {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 28px;
+}
+.hero-art {
+    background: #e3e9d8;
+    border-radius: 160px 160px 10px 10px;
+    overflow: hidden;
+}
+.hero-art figcaption {
+    padding: 0 25px 25px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+.missao {
+    border-top: 1px solid var(--line);
+    padding: 60px 48px;
+}
+.colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 850px;
+    margin-top: 30px;
+}
+.colunas p + p {
+    margin: 0;
+}
+.caminhos {
+    padding: 55px 48px;
+    background: #e9eddc;
+}
+.titulo-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+}
+.grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 45px;
+}
+.grade article {
+    border-top: 1px solid #849580;
+    padding-top: 20px;
+}
+.numero {
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 25px;
+}
+.grade h3 {
+    margin-bottom: 16px;
+}
+.convite {
+    padding: 50px 48px;
+    background: var(--green);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    justify-content: space-between;
+}
+.convite p {
+    max-width: 740px;
+    margin-top: 18px;
+}
+.claro {
+    background: var(--lime);
+    color: var(--ink);
+    white-space: nowrap;
+}
+.claro:hover {
+    background: #cbe66b;
+}
+.rodape {
+    padding: 45px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.rodape p,
+.rodape address {
+    font-size: 0.85rem;
+}
+.rodape address {
+    font-style: normal;
+    justify-self: end;
+}
+.nota {
+    grid-column: 1/-1;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+
+/* Página de projetos */
+.intro {
+    padding: 60px 48px;
+}
+.lista-projetos {
+    padding: 0 48px 50px;
+}
+.projeto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 45px 0;
+    border-top: 1px solid var(--line);
+    align-items: center;
+}
+.projeto img {
+    border-radius: 16px;
+}
+.projeto h2 {
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+}
+.projeto h3 {
+    font-size: 1.15rem;
+    margin-top: 22px;
+    letter-spacing: -0.01em;
+}
+.projeto ul {
+    padding-left: 22px;
+}
+.projeto .link {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Formulário de cadastro */
+.form-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 65px;
+    padding: 0 48px 65px;
+}
+.form-nota {
+    border-top: 1px solid var(--ink);
+    padding-top: 22px;
+}
+.form-nota h2 {
+    font-size: 1.6rem;
+}
+.form-nota ol {
+    padding-left: 20px;
+}
+.form-nota p {
+    font-size: 0.88rem;
+    background: #e9eddc;
+    padding: 20px;
+    border-radius: 8px;
+}
+fieldset {
+    border: 0;
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+    margin: 0;
+}
+legend {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-right: 20px;
+}
+.campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.campo label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 7px;
+}
+.campo input,
+.campo select {
+    width: 100%;
+    background: white;
+    border: 1px solid #99aaa1;
+    border-radius: 7px;
+    padding: 12px;
+    font: inherit;
+    color: var(--ink);
+    min-height: 48px;
+}
+.campo small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 5px;
+}
+.check {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    font-size: 0.88rem;
+    margin-top: 24px;
+}
+.check input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: var(--green);
+}
+.resultado {
+    padding: 20px;
+    background: var(--lime);
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Navegação pelo teclado */
+.skip {
+    position: absolute;
+    left: 15px;
+    top: -100px;
+    background: white;
+    padding: 12px;
+    z-index: 5;
+}
+.skip:focus {
+    top: 10px;
+}
+:focus-visible {
+    outline: 3px solid #a14e13;
+    outline-offset: 4px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 800px) {
+    .cabecalho {
+        padding: 20px 24px;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .cabecalho nav {
+        gap: 20px;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 24px;
+        gap: 40px;
+    }
+    .hero-art {
+        max-width: 550px;
+    }
+    .missao,
+    .caminhos,
+    .intro,
+    .convite {
+        padding: 40px 24px;
+    }
+    .colunas,
+    .grade,
+    .projeto,
+    .form-layout {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+    .titulo-linha,
+    .convite {
+        align-items: start;
+        flex-direction: column;
+    }
+    .lista-projetos {
+        padding: 0 24px 35px;
+    }
+    .projeto {
+        padding: 30px 0;
+    }
+    .form-layout {
+        padding: 0 24px 45px;
+    }
+    .rodape {
+        padding: 35px 24px;
+        grid-template-columns: 1fr;
+    }
+    .rodape address {
+        justify-self: start;
+    }
+    .grade {
+        gap: 30px;
+    }
+    .form-nota ol {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 480px) {
+    .campos {
+        grid-template-columns: 1fr;
+    }
+    .cabecalho nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .nav-cta {
+        padding: 7px 12px;
+    }
+    .botao {
+        font-size: 0.9rem;
+    }
+    .projeto h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* As fotos ocupam o espaço sem perder a proporção. */
+.hero-art picture {
+    display: block;
+}
+.hero-art img {
+    width: 100%;
+}
+.hero-art figcaption {
+    padding: 16px 25px;
+}
+.projeto picture {
+    display: block;
+}
+.projeto img {
+    width: 100%;
+}
