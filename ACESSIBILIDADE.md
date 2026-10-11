@@ -29,6 +29,10 @@ A relação foi calculada pela luminância relativa das cores definidas no CSS:
 
 Essas combinações superam 4,5:1 para texto comum, conforme o critério 1.4.3 da WCAG 2.1. Referência: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
 
+## Modo de alto contraste
+
+O botão do cabeçalho alterna a classe alto-contraste e atualiza aria-pressed. Foram conferidos a ativação, a troca para o cadastro, o modal preto com texto branco e o retorno ao modo normal. Branco sobre preto tem relação de 21:1; amarelo sobre preto tem 19,56:1. O modo permanece durante a navegação e é redefinido ao recarregar a página.
+
 ## Limites da revisão
 
 A inspeção da árvore de acessibilidade confirmou os nomes e a estrutura dos controles. Ainda é recomendável um teste com leitor de tela real, como NVDA, e usuários. Esta revisão cobre os pontos descritos; não representa certificação de conformidade integral com todos os critérios da WCAG 2.1 AA.

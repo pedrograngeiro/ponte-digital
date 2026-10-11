@@ -30,6 +30,11 @@ function mostrarPagina(evento) {
 }
 
 configurarMenu();
+const contraste = document.getElementById("alto-contraste");
+contraste.addEventListener("click", function () {
+    const ativado = document.body.classList.toggle("alto-contraste");
+    contraste.setAttribute("aria-pressed", String(ativado));
+});
 document.getElementById("pular-conteudo").addEventListener("click", function (evento) {
     evento.preventDefault();
     conteudo.focus();
