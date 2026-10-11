@@ -408,3 +408,34 @@ dialog::backdrop {
 body > .pular-conteudo {
     grid-column: 1 / -1;
 }
+
+#alto-contraste {
+    margin-top: var(--espaco-2);
+}
+
+body.alto-contraste {
+    --fundo: #000000;
+    --branco: #000000;
+    --texto: #ffffff;
+    --verde: #ffffff;
+    --verde-escuro: #ffff00;
+    --verde-claro: #000000;
+    --borda: #ffffff;
+    --erro: #ffff00;
+    --aviso: #ffff00;
+    --sucesso: #ffffff;
+    color-scheme: dark;
+}
+
+.alto-contraste input,
+.alto-contraste select,
+.alto-contraste dialog {
+    color: var(--texto);
+    background: var(--fundo);
+}
+
+.alto-contraste button,
+.alto-contraste .botao {
+    color: #000000;
+    background: #ffffff;
+}
