@@ -6,6 +6,8 @@ Projeto acadêmico de uma ONG fictícia de educação e inclusão digital. A apl
 
 Requisito: Node.js. Na pasta do projeto, execute `node iniciar.cjs` e acesse http://127.0.0.1:4175/html/index.html. Não abra o HTML diretamente por file://, pois a aplicação utiliza módulos ES6.
 
+Para obter o projeto, use `git clone https://github.com/pedrograngeiro/ponte-digital.git` e entre na pasta `ponte-digital`. Para gerar a versão de produção, execute `npm ci` e depois `npm run build`. O esbuild reúne e minifica o JavaScript e o CSS na pasta docs/. A navegação do site não depende de bibliotecas externas.
+
 ## Organização
 
 - html/: estrutura da aplicação.
@@ -22,7 +24,9 @@ Use o menu para navegar. O formulário é demonstrativo e deve ser preenchido co
 
 ## Acessibilidade e testes
 
-O projeto usa títulos hierárquicos, rótulos nos campos, textos alternativos, mensagens de erro e sucesso e foco visível. O link “Pular para o conteúdo” permite evitar o menu pelo teclado. A revisão de acessibilidade e os resultados serão registrados em ACESSIBILIDADE.md; não equivalem a uma certificação automática de WCAG.
+O projeto usa títulos hierárquicos, rótulos nos campos, textos alternativos, mensagens de erro e sucesso e foco visível. O link “Pular para o conteúdo” permite evitar o menu pelo teclado. A revisão de acessibilidade e os resultados estão registrados em ACESSIBILIDADE.md; não equivalem a uma certificação automática de WCAG.
+
+Os testes são manuais: abra as três telas, use Tab e Enter para navegar, feche o modal com Escape e confira o foco. Tente enviar o cadastro vazio e depois preencha com dados fictícios. Confira a confirmação, recarregue a tela e use o botão de apagar os dados de teste. Verifique também o console e a tela de 320px. Não há comando de testes automatizados.
 
 ## Versionamento e manutenção
 
@@ -32,4 +36,8 @@ Antes de integrar uma alteração, teste a navegação, o formulário e o armaze
 
 ## Publicação
 
-O repositório remoto e a URL pública ainda estão pendentes. Esta seção será atualizada após a publicação e a verificação do endereço real.
+Repositório: https://github.com/pedrograngeiro/ponte-digital
+
+Site: https://pedrograngeiro.github.io/ponte-digital/
+
+O GitHub Pages publica a pasta docs/ da branch main. Depois de alterar o código-fonte, execute `npm run build`, revise os arquivos gerados e inclua-os no commit. A integração em main aciona a publicação. O PR #1 registra a integração da versão de produção; a issue #2 acompanha a conferência final no marco v1.0.0.
