@@ -5,7 +5,7 @@ import { configurarMenu } from "./modulos/menu.js";
 const conteudo = document.getElementById("conteudo");
 const titulos = { inicio: "Início", projetos: "Projetos", cadastro: "Cadastro" };
 
-function mostrarPagina() {
+function mostrarPagina(evento) {
     const [caminho, consulta = ""] = location.hash.slice(1).split("?");
     const rota = Object.hasOwn(titulos, caminho) ? caminho : "inicio";
     conteudo.replaceChildren(criarPagina(rota));
@@ -23,10 +23,17 @@ function mostrarPagina() {
     document.querySelector("nav").classList.remove("aberto");
     document.querySelector(".menu-botao").setAttribute("aria-expanded", "false");
     if (rota === "cadastro") configurarFormulario(new URLSearchParams(consulta));
-    conteudo.focus();
-    window.scrollTo(0, 0);
+    if (evento) {
+        conteudo.focus();
+        window.scrollTo(0, 0);
+    }
 }
 
 configurarMenu();
+document.getElementById("pular-conteudo").addEventListener("click", function (evento) {
+    evento.preventDefault();
+    conteudo.focus();
+    conteudo.scrollIntoView();
+});
 window.addEventListener("hashchange", mostrarPagina);
 mostrarPagina();
