@@ -46,18 +46,22 @@ export function configurarFormulario(parametros) {
         });
     }
 
-    formulario.addEventListener("input", function () {
+    formulario.addEventListener("input", function (evento) {
         nome.setCustomValidity(
             nome.value.trim().length < 3 ? "Informe um nome com pelo menos três caracteres." : "",
         );
         erro.hidden = true;
         resultado.hidden = true;
         botao.disabled = false;
+        if (evento.target.validity) {
+            evento.target.setAttribute("aria-invalid", String(!evento.target.validity.valid));
+        }
     });
 
     formulario.addEventListener(
         "invalid",
-        function () {
+        function (evento) {
+            evento.target.setAttribute("aria-invalid", "true");
             erro.textContent = "Confira os campos destacados e complete os dados obrigatórios.";
             erro.hidden = false;
         },

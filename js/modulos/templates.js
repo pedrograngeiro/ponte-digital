@@ -29,7 +29,7 @@ function criarCartoes() {
             <h2>${projeto.titulo}</h2>
             <picture>
                 <source srcset="../imagens/${projeto.imagem}.webp" type="image/webp">
-                <img src="../imagens/${projeto.imagem}.jpg" alt="${projeto.alt}" width="1200" height="800">
+                <img src="../imagens/${projeto.imagem}.jpg" alt="${projeto.alt}" width="1200" height="800" loading="lazy">
             </picture>
             <h3>Público e atividades</h3>
             <p>${projeto.descricao}</p>
