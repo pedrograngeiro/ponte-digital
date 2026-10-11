@@ -3,6 +3,7 @@ const path = require("path");
 const esbuild = require("esbuild");
 const raiz = path.resolve(__dirname, "..");
 const destino = path.join(raiz, "docs");
+const versao = require("../package.json").version;
 
 async function construir() {
     fs.mkdirSync(path.join(destino, "js"), { recursive: true });
@@ -34,8 +35,8 @@ async function construir() {
     });
 
     let html = fs.readFileSync(path.join(raiz, "html/index.html"), "utf8");
-    html = html.replace("../css/estilo.css", "./css/estilo.min.css");
-    html = html.replace("../js/principal.js", "./js/aplicacao.min.js");
+    html = html.replace("../css/estilo.css", "./css/estilo.min.css?v=" + versao);
+    html = html.replace("../js/principal.js", "./js/aplicacao.min.js?v=" + versao);
     html = html.replace(/>\s+</g, "><").trim();
     fs.writeFileSync(path.join(destino, "index.html"), html);
     fs.writeFileSync(path.join(destino, ".nojekyll"), "");
