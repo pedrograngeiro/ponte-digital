@@ -36,6 +36,7 @@ async function construir() {
     let html = fs.readFileSync(path.join(raiz, "html/index.html"), "utf8");
     html = html.replace("../css/estilo.css", "./css/estilo.min.css");
     html = html.replace("../js/principal.js", "./js/aplicacao.min.js");
+    html = html.replace(/>\s+</g, "><").trim();
     fs.writeFileSync(path.join(destino, "index.html"), html);
     fs.writeFileSync(path.join(destino, ".nojekyll"), "");
     console.log("Build concluído na pasta docs.");
